@@ -1,0 +1,21 @@
+.btn-text {
+    font-size: $font-size-primary;
+    transition: $transition-primary;
+    &:link,
+    &:visited {
+        text-decoration: none;
+        color: $color-primary;
+        border-bottom: .2rem solid;
+        display: inline-block;
+    }
+    &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+        transform: translateY(-0.5rem);
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    }
+    &:active {
+        transform: translateY(-0.1rem);
+        box-shadow: 0 .5rem 1rem rgba($color-black, 0.2);
+    }
+}

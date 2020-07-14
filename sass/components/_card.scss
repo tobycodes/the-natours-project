@@ -1,0 +1,167 @@
+.card {
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 52rem;
+    &__content {
+        height: 52rem;
+        width: 100%;
+        border-radius: .3rem;
+        overflow: hidden;
+        transition: all .8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+        &--front {
+            background-color: $color-white;
+        }
+        &--back {
+            color: black;
+            transform: rotateY(180deg);
+            &-1 {
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+            }
+            &-2 {
+                background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+            }
+            &-3 {
+                background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+            }
+        }
+    }
+    &:hover &__content--front {
+        transform: rotateY(180deg);
+    }
+    &:hover &__content--back {
+        transform: rotateY(360deg);
+    }
+    &__image {
+        background-size: cover;
+        height: 46%;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        &--1 {
+            background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/nat-5.jpg);
+            background-blend-mode: screen;
+        }
+        &--2 {
+            background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(../img/nat-6.jpg);
+            background-blend-mode: screen;
+        }
+        &--3 {
+            background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url(../img/nat-7.jpg);
+            background-blend-mode: screen;
+        }
+    }
+    &__title {
+        text-transform: uppercase;
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-align: right;
+        color: $color-white;
+        position: absolute;
+        top: 12rem;
+        right: 4rem;
+        width: 70%;
+    }
+    &__title--span {
+        &-1 {
+            background-image: linear-gradient(to right bottom, rgba($color-secondary-light, .85), rgba($color-secondary-dark, .85));
+            padding: 1rem 1.5rem;
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+        }
+        &-2 {
+            background-image: linear-gradient(to right bottom, rgba($color-primary-light, .85), rgba($color-primary-dark, .85));
+            padding: 1rem 1.5rem;
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+        }
+        &-3 {
+            background-image: linear-gradient(to right bottom, rgba($color-tertiary-light, .85), rgba($color-tertiary-dark, .85));
+            padding: 1rem 1.5rem;
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+        }
+    }
+    &__details {
+        padding: 3rem;
+        ul {
+            margin: 0 auto;
+            list-style: none;
+            width: 80%;
+        }
+        li {
+            font-size: 1.5rem;
+            padding: 1rem;
+            text-align: center;
+            &:not(:last-child) {
+                border-bottom: .1rem solid #eee;
+            }
+        }
+    }
+    &__cta {
+        width: 90%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: $color-white;
+        &--only {
+            text-transform: uppercase;
+        }
+        &--price {
+            padding-bottom: 6rem;
+            font-size: 6rem;
+            font-weight: 200;
+        }
+        &--btn {
+            padding-top: 3rem;
+        }
+    }
+    //MEDIA QUERIES FOR MOBILE VIEW
+    // @include respond(tab-port) {
+    @media only screen and (max-width:56.25em),
+    only screen and (hover:none) {
+        height: auto;
+        background-color: $color-white;
+        border-radius: .3rem;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+        &__content {
+            border-radius: .3rem;
+            position: relative;
+            box-shadow: unset;
+            &--back {
+                transform: rotateY(0);
+                height: auto;
+                padding: 5rem 0;
+                -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+        &:hover &__content--front {
+            transform: rotateY(0);
+        }
+        &:hover &__content--back {
+            transform: rotateY(0);
+        }
+        &__cta {
+            width: 100%;
+            position: relative;
+            top: 0%;
+            left: 0%;
+            transform: translate(0%, 0%);
+            &--price {
+                padding-bottom: 0;
+                font-size: 4rem;
+            }
+            &--btn {
+                padding-top: 0;
+            }
+        }
+    }
+}

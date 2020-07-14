@@ -1,0 +1,35 @@
+.u-center-text {
+    text-align: center !important;
+}
+
+.u-skew-heading {
+    &:hover {
+        transform: skewY(2deg) skewX(15deg) scale(1.1);
+        text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+    }
+}
+
+.u-margin-bottom-8 {
+    margin-bottom: 8rem;
+    @include respond(tab-port) {
+        margin-bottom: 5rem !important;
+    }
+    @include respond(phone) {
+        margin-bottom: 3rem !important;
+    }
+}
+
+.u-margin-bottom-md {
+    margin-bottom: 3.5rem !important;
+    @include respond(tab-port) {
+        margin-bottom: 3rem !important;
+    }
+}
+
+.u-margin-bottom-bg {
+    margin-bottom: 6rem !important;
+}
+
+.u-margin-bottom-sm {
+    margin-bottom: 1.5rem !important;
+}
